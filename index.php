@@ -24,5 +24,5 @@
         </form>
     </div>
 </body>
-<script src="js/alerta.js"></script>
+<script src="js/alertaLogin.js"></script>
 </html>

@@ -7,9 +7,7 @@ $dbname = "colegioweb_vpmprt";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    $_SESSION['alerta'] = "Fallo en la conexión";
-    header("Location: ../index.html");
-    exit;
+    echo "A";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
