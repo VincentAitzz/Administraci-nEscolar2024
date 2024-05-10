@@ -1,24 +1,24 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "colegioweb_vpmprt";
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "colegioweb_vpmprt";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Error al conectar: " . $conn->connect_error);
-}
+    if ($conn->connect_error) {
+        die("Error al conectar: " . $conn->connect_error);
+    }
 
-$sql = "SELECT ID, RUT, Nombre, Apellidos, Contacto FROM apoderado";
-$result = $conn->query($sql);
+    $sql = "SELECT * FROM apoderado";
+    $result = $conn->query($sql);
 
-$data = [];
-while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
-}
+    $data = [];
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
 
-$conn->close();
+    $conn->close();
 
-echo json_encode($data);
-?>
+    echo json_encode($data);
+    ?>
