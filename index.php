@@ -11,7 +11,7 @@
         <img src="IMG/logoUsuario.png" class="logoUsuario">
         <img src="IMG/icons8-bloquear-64.png" class="logoContraseña">
 
-        <form action="actionsPhp/logicaLogin.php" method="post">
+        <form id="loginForm" method="post">
             <input type="text" class="inputUsu" required name="usuario">
             <label class="labelUsu">Usuario</label>
             <br>
@@ -24,4 +24,5 @@
         </form>
     </div>
 </body>
+<script src="js/alerta.js"></script>
 </html>

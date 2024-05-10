@@ -7,7 +7,9 @@ $dbname = "colegioweb_vpmprt";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Error al conectar: " . $conn->connect_error);
+    $_SESSION['alerta'] = "Fallo en la conexión";
+    header("Location: ../index.html");
+    exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,9 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../HUB.php");
         exit;
     } else {
-        echo "Usuario o contraseña incorrectos";
+        echo "Los datos ingresados no existen dentro de la base de datos.";
     }
 }
-
 $conn->close();
 ?>

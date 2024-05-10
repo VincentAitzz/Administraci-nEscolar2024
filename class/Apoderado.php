@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apoderado</title>
     <!--<link rel="stylesheet" href="CSS/styleClases.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h2>Administración de Apoderados</h2>
-        <form class="input-field" action="InsertApoderado.php" method="POST">
+        <form id="dataForm" class="input-field" method="POST">
+            <input type="hidden" name="id" id="id" value="1">
             <input type="text" id="rut" name="rut" class="inputRUT" required>
             <label class="lblRUT">RUT</label>
             <br>
@@ -24,9 +24,9 @@
             <label class="lblContacto">Contacto</label>
             <br>
             <div class="buttonsCRUD">
-                <input type="submit" value="Ingresar" class="btnCRUD">
-                <button class="btnCRUD" type="button">Editar</button>
-                <button class="btnCRUD" type="button">Eliminar</button>
+                <input type="submit" value="Ingresar" class="btnCRUD" id="Ingresar">
+                <input type="submit" value="Editar" class="btnCRUD" id="Editar">
+                <input type="submit" value="Editar" class="btnCRUD" id="Editar">
             </div>
         </form>
     </div>
@@ -67,7 +67,7 @@
                 }
             }
         }
-/*
+        /*
         function changeButtonColor(button) {
             var buttons = document.querySelectorAll('#pagination button');
             buttons.forEach(function(btn) {
@@ -75,7 +75,6 @@
             });
             button.style.backgroundColor = '#49D3F0'; // Cambia el color del botón seleccionado
         }*/
-
         function renderPagination(data, itemsPerPage) {
             const totalPages = Math.ceil(data.length / itemsPerPage);
             const pagination = document.getElementById('pagination');
@@ -112,4 +111,5 @@
         <a href="../HUB.php" class="btn -btnVolver">Volver</a>
     </div>
 </body>
+<script src="../js/alertaInsApoderado.js"></script>
 </html>

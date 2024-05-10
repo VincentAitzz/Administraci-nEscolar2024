@@ -70,7 +70,7 @@
             </a>
         </div>
         <div class="buttons">
-            <a href="index.html" class="btn -btn1">Salir</a>
+            <a href="index.php" class="btn -btn1">Salir</a>
         </div>
     </div>
 </body>
