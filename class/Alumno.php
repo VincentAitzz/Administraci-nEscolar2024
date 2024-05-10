@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración | Alumnos</title>
-    <link rel="stylesheet" href="StyleAlumno.css">
+    <link rel="stylesheet" href="../css/StyleAlumno.css">
 </head>
 <body>
     <div class="container">
@@ -31,11 +31,15 @@
         <label for="promedio" class="lblPromedioAlumnos">Promedio</label>
         <br>
         <!--Apoderado-->
-        <label for="apoderado" class="lblApoderado">Apoderados:</label>
-        <select id=apoderado name="apoderado" onload="">
-        <option value="">Seleccionar Apoderado...</option> 
-        
-    <br>
+        <select id=apoderado name="apoderado">
+        <option value="">Seleccionar Apoderado...</option>
+        <?php include '../actionsPhp/cargarApoderado.php';?>
+        </select> 
+        <br>
+        <!--CURSO:-->
+        <select id="Curso" name="Curso" onload="">
+        <option value="">Seleccionar Curso..</option>
+        </select>
     <a href="../HUB.php">Volver</a>
 </body>
 
