@@ -2,13 +2,14 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "colegioweb_vpmprt";
+$dbname = "colegioweb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     echo "Error en la conexion";
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $RUT = $_POST['rut'];
