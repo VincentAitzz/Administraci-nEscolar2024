@@ -75,18 +75,14 @@
 
             for (let i = 1; i <= totalPages; i++) {
                 const button = document.createElement('button');
-                /*button.style.backgroundColor = '#49D3F0';
-                button.style.color = '#364042';*/
                 button.style.borderRadius = '100%';
                 button.style.width= '5vh';
-                button.style.height= '5vh';/*
-                button.style.border = '1px solid black';*/
+                button.style.height= '5vh';
                 button.addEventListener('click', () => {
                     currentPage = i;
                     const start = (currentPage - 1) * itemsPerPage;
                     const end = start + itemsPerPage;
                     renderTable(data, start, end);
-                    //changeButtonColor(button);
                 });
                 pagination.appendChild(button);
             }
