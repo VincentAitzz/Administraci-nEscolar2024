@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "colegioweb_vpmprt";
+    $dbname = "colegioweb";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 

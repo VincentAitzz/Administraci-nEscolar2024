@@ -67,14 +67,7 @@
                 }
             }
         }
-        /*
-        function changeButtonColor(button) {
-            var buttons = document.querySelectorAll('#pagination button');
-            buttons.forEach(function(btn) {
-                btn.style.backgroundColor = '#17b2d1'; // Restablece el color de los botones no seleccionados
-            });
-            button.style.backgroundColor = '#49D3F0'; // Cambia el color del botón seleccionado
-        }*/
+        
         function renderPagination(data, itemsPerPage) {
             const totalPages = Math.ceil(data.length / itemsPerPage);
             const pagination = document.getElementById('pagination');
@@ -112,4 +105,5 @@
     </div>
 </body>
 <script src="../js/alertaInsApoderado.js"></script>
+<script src="../js/alertaAltApoderado.js"></script>
 </html>
