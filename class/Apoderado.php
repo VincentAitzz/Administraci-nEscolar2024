@@ -10,7 +10,9 @@
     <div class="container">
         <h2>Administración de Apoderados</h2>
         <form id="dataForm" class="input-field" method="POST">
-            <input type="hidden" name="id" id="id" value="1">
+            <input type="" name="id" id="id" value="">
+            <label class="lblID">ID</label>
+            <br>
             <input type="text" id="rut" name="rut" class="inputRUT" required>
             <label class="lblRUT">RUT</label>
             <br>
@@ -33,6 +35,12 @@
     <div class="input-field2">
         <input type="text" class="inputBus" required>
         <label class="lblBus">Buscador</label>
+        <select name="frutas">
+            <option value="manzana">Manzana</option>
+            <option value="pera">Pera</option>
+            <option value="uva">Uva</option>
+            <option value="fresa">Fresa</option>
+        </select>
     </div>
     <table id="tabla-apoderados">
         <thead>
