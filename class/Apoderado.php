@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apoderado</title>
-    <!--<link rel="stylesheet" href="CSS/styleClases.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h2>Administración de Apoderados</h2>
         <form id="dataForm" class="input-field" method="POST">
-            <input type="" name="id" id="id" value="">
+            <input type="" name="id" id="id">
             <label class="lblID">ID</label>
             <br>
             <input type="text" id="rut" name="rut" class="inputRUT" required>
@@ -28,7 +28,7 @@
             <div class="buttonsCRUD">
                 <input type="submit" value="Ingresar" class="btnCRUD" id="Ingresar">
                 <input type="submit" value="Editar" class="btnCRUD" id="Editar">
-                <input type="submit" value="Editar" class="btnCRUD" id="Editar">
+                <input type="submit" value="Eliminar" class="btnCRUD" id="Eliminar">
             </div>
         </form>
     </div>
@@ -40,7 +40,7 @@
             <option value="RUT">RUT</option>
             <option value="Nombre">Nombre</option>
             <option value="Apellidos">Apellidos</option>
-        </select>
+        </select>   
     </div>
     <table id="tabla-apoderados">
         <thead>
@@ -54,60 +54,90 @@
         </thead>
         <tbody id="tableBody"></tbody>
     </table>
-    <div id="pagination" class="paginacion"></div>
+    <div id="btnPaginacion"></div>
     <script>
-        function fetchData(url, callback) {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => callback(data))
-                .catch(error => console.error('Error fetching data:', error));
+        var datos = [];
+        var paginaActual = 1;
+        var filasPorPagina = 6;
+
+        function obtenerDatos() {
+            fetch('../actionsPhp/ldApoderado.php')
+            .then(response => response.json())
+            .then(data => {
+                datos = data;
+                mostrarPagina(paginaActual);
+                generarBotones();
+            })
+            .catch(error => console.error('Error:', error));
         }
 
-        function renderTable(data, start, end) {
-            const tableBody = document.getElementById('tableBody');
-            tableBody.innerHTML = '';
+        function mostrarPagina(pagina, datosParaMostrar = datos) {
+            var inicio = (pagina - 1) * filasPorPagina;
+            var fin = inicio + filasPorPagina;
+            var filas = datosParaMostrar.slice(inicio, fin);
 
-            for (let i = start; i < end; i++) {
-                const item = data[i];
-                if (item) {
-                    const row = `<tr><td>${item.ID}</td><td>${item.RUT}</td><td>${item.Nombre}</td><td>${item.Apellidos}</td><td>${item.Contacto}</td></tr>`;
-                    tableBody.innerHTML += row;
-                }
+            var tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            filas.forEach(fila => {
+                var tr = document.createElement('tr');
+                tr.innerHTML = `<td>${fila.ID}</td><td>${fila.RUT}</td><td>${fila.Nombre}</td><td>${fila.Apellidos}</td><td>${fila.Contacto}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filtrarDatos() {
+            var campo = document.querySelector('select[name="camposDisponibles"]').value;
+            var busqueda = document.querySelector('.inputBus').value.toLowerCase();
+
+            if (busqueda === '') {
+                mostrarPagina(paginaActual);
+            } else {
+                var datosFiltrados = datos.filter(fila => fila[campo].toLowerCase().includes(busqueda));
+                mostrarPagina(1, datosFiltrados);
             }
         }
-        
-        function renderPagination(data, itemsPerPage) {
-            const totalPages = Math.ceil(data.length / itemsPerPage);
-            const pagination = document.getElementById('pagination');
-            pagination.innerHTML = '';
 
-            for (let i = 1; i <= totalPages; i++) {
-                const button = document.createElement('button');
-                button.style.borderRadius = '100%';
-                button.style.width= '5vh';
-                button.style.height= '5vh';
-                button.addEventListener('click', () => {
-                    currentPage = i;
-                    const start = (currentPage - 1) * itemsPerPage;
-                    const end = start + itemsPerPage;
-                    renderTable(data, start, end);
+        function generarBotones() {
+            var numeroDePaginas = Math.ceil(datos.length / filasPorPagina);
+            var contenedor = document.getElementById('btnPaginacion');
+            contenedor.innerHTML = '';
+
+            for (var i = 1; i <= numeroDePaginas; i++) {
+                var boton = document.createElement('button');
+                boton.textContent = i;
+                boton.addEventListener('click', function() {
+                    paginaActual = parseInt(this.textContent);
+                    mostrarPagina(paginaActual);
                 });
-                pagination.appendChild(button);
+
+                contenedor.appendChild(boton);
             }
         }
 
-        const itemsPerPage = 10;
-        let currentPage = 1;
-
-        fetchData('../actionsPhp/ldApoderado.php', data => {
-            renderTable(data, 0, itemsPerPage);
-            renderPagination(data, itemsPerPage);
-        });
+        document.querySelector('.inputBus').addEventListener('input', filtrarDatos);
+        obtenerDatos();
     </script>
     <div class="btnVolver">
         <a href="../HUB.php" class="btn -btnVolver">Volver</a>
     </div>
 </body>
+<script>
+    $(document).ready(function(){
+        $('#tabla-apoderados tbody').on('click', 'tr', function(){
+            var rowData = $(this).children('td').map(function(){
+                return $(this).text();
+            }).get();
+                
+            $('#id').val(rowData[0]);
+            $('#rut').val(rowData[1]);
+            $('#nombre').val(rowData[2]);
+            $('#apellidos').val(rowData[3]);
+            $('#contacto').val(rowData[4]);
+        });
+    });
+</script>
 <script src="../js/alertaInsApoderado.js"></script>
 <script src="../js/alertaAltApoderado.js"></script>
+<script src="../js/alertaDelApoderado.js"></script>
 </html>
