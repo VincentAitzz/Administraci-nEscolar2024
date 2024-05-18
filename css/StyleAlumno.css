@@ -47,6 +47,7 @@ h2 {
     box-sizing: border-box; /* Incluir el borde en el tamaño total */
     margin-bottom: 16px; /* Espacio inferior entre los campos */
 }
+
 /*Faltan los Label con su animacion culia*/
 /*COMBO BOX COSOS::*/
 select{
@@ -150,4 +151,35 @@ select{
     color: #49D3F0;
     background: transparent;
 }
+/*BUSCAR BARRITA*/
+.input-field2{
+    position: absolute;
+    top: 15%;
+    right: 43px;
+    align-items: center;
+}
 
+.input-field2 input[type="text"]{
+    position: relative;
+    margin: -15px;
+    width: 55vh;
+    height: 6vh;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 2px solid #49D3F0;
+    background: transparent;
+    color: #49D3F0;
+    outline: none;
+}
+
+.input-field2 .lblBus{
+    position:absolute;
+    top: 20%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
