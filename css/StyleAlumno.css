@@ -34,7 +34,8 @@ h2 {
     position: relative;
     margin-top: 2.7vh;
 }
-.input-field input[type="text"] {
+/*ID TEXTBOXS CSS*/
+#ID {
     width: 100%; /* Ocupa todo el ancho disponible */
     height: 48px; /* Altura fija para una apariencia consistente */
     border-radius: 24px; /* Redondear las esquinas */
@@ -47,10 +48,89 @@ h2 {
     box-sizing: border-box; /* Incluir el borde en el tamaño total */
     margin-bottom: 16px; /* Espacio inferior entre los campos */
 }
-
+.lblID{
+    position: absolute;
+    top:5%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px;
+    transition: .3s;
+    z-index: -1;
+}
+/*RUT TEXTBOXS CSS*/
+#RUT {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+/*Nombre TEXTBOXS CSS*/
+#Nombre {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+/*ID TEXTBOXS CSS*/
+#Apellidos {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+/*ID TEXTBOXS CSS*/
+#Edad {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+/*ID TEXTBOXS CSS*/
+#Promedio {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
 /*Faltan los Label con su animacion culia*/
 /*COMBO BOX COSOS::*/
-select{
+select {
     color:#49D3F0; /*COLOR DEL COMBOBOX*/
     background-color: #364042;
     border: 0.5px solid #ccc;

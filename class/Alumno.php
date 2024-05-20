@@ -12,13 +12,17 @@
     <div class="container">
         <h2>Administracion de Alumnos</h2>
         <form id="dataForm" class="input-field" method="POST">
+            <div class="campos">
             <input type="text" id="ID" class="inputID" required>
             <label  for="ID" class="lblID">ID</label>
             <br>
+            </div>
             <!-- Rut-->
+            <div class="campos">
             <input type="text" id="RUT" class="inputRut" required>
             <label for="RUT" class="lblRUT">RUT</label>
             <br>
+            </div>
             <!-- Nombre-->
             <input type="text" id="Nombre" class="inputNombre" required>
             <label for="Nombre" class="lblNombre">Nombre</label>
