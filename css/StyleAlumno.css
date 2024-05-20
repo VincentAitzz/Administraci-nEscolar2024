@@ -50,7 +50,27 @@ h2 {
 }
 .lblID{
     position: absolute;
-    top:5%;
+    top:3%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px;
+    transition: .3s;
+    z-index: -1;
+}
+.lblRUT{
+    position: absolute;
+    top:12%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px;
+    transition: .3s;
+    z-index: -1;
+}
+.lblNombre{
+    position: absolute;
+    top:21%;
     left: 30px;
     transform: translateY(-50%);
     color: #49D3F0;
