@@ -11,24 +11,22 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $ID = $_POST['id'];
     $RUT = $_POST['rut'];
     $Nombre = $_POST['nombre'];
     $Apellido = $_POST['apellidos'];
+    $Cargo = $_POST['cargo'];
+    $TipoContrato = $_POST['tipoContrato'];
+    $Estado = $_POST['estadoContrato'];
     $Contacto = $_POST['contacto'];
     
-    if (!empty($RUT) && !empty($Nombre) && !empty($Apellido) && !empty($Contacto)) {
-        $stmt = $conn->prepare("UPDATE apoderado SET RUT=?, Nombre=?, Apellidos=?, Contacto=? WHERE ID =?");
-        $stmt->bind_param("sssss", $RUT, $Nombre, $Apellido, $Contacto, $ID);
+        $stmt = $conn->prepare("INSERT INTO empleados(RUT,Nombre,Apellidos,Cargo,TipoContrato,Estado,Contacto) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $RUT, $Nombre, $Apellido, $Cargo, $TipoContrato, $Estado, $Contacto);
 
         if ($stmt->execute()) {
-            echo "Registro actualizado con éxito";
+            echo "Registro insertado con éxito";
         } else {
-            echo "Error al actualizar el registro: " . $conn->error;
+            echo "Error al insertar el registro: " . $conn->error;
         }
-    } else {
-        echo "Ingrese Datos";
-    }
 }
 $conn->close();
 ?>

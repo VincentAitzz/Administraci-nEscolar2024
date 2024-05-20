@@ -34,11 +34,6 @@
                 <img src="IMG/icons8-usuario-masculino-en-círculo-50.png" class="BTN-Apoderados-Icon">
             </a>
         </div>
-        <div class="BTN-Profesor">
-            <a href="class/Profesor.php" class="BTN-Profesor-Label">Profesor
-                <img src="IMG/icons8-gerente-50.png" class="BTN-Profesor-Icon">
-            </a>
-        </div>
         <div class="BTN-Alumno">
             <a href="class/Alumno.php" class="BTN-Alumno-Label">Alumno
                 <img src="IMG/icons8-gorro-de-graduación-64.png" class="BTN-Alumno-Icon">

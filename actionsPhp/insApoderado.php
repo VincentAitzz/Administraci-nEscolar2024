@@ -10,7 +10,6 @@ if ($conn->connect_error) {
     echo "Error en la conexion";
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $RUT = $_POST['rut'];
     $Nombre = $_POST['nombre'];
@@ -18,8 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Contacto = $_POST['contacto'];
     
     if (!empty($RUT) && !empty($Nombre) && !empty($Apellido) && !empty($Contacto)) {
-        $sql = "INSERT INTO apoderado(RUT,Nombre,Apellidos,Contacto) VALUES ('$RUT','$Nombre','$Apellido','$Contacto');";
-        if ($conn->query($sql) === TRUE) {
+        $stmt = $conn->prepare("INSERT INTO apoderado(RUT,Nombre,Apellidos,Contacto) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $RUT, $Nombre, $Apellido, $Contacto);
+
+        if ($stmt->execute()) {
             echo "Registro insertado con éxito";
         } else {
             echo "Error al insertar el registro: " . $conn->error;
