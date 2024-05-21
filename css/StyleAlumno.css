@@ -34,7 +34,72 @@ h2 {
     position: relative;
     margin-top: 2.7vh;
 }
-.input-field input[type="text"] {
+#ID{
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+#RUT{
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+#Nombre{
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+#Apellidos{
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+#Edad{
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 48px; /* Altura fija para una apariencia consistente */
+    border-radius: 24px; /* Redondear las esquinas */
+    font-size: 16px; /* Tamaño de fuente razonable */
+    padding: 12px 20px; /* Espaciado interior */
+    border: 2px solid #49D3F0; /* Borde sólido */
+    background-color: transparent; /* Fondo transparente */
+    color: #49D3F0; /* Color de texto */
+    outline: none; /* Eliminar borde de enfoque */
+    box-sizing: border-box; /* Incluir el borde en el tamaño total */
+    margin-bottom: 16px; /* Espacio inferior entre los campos */
+}
+#Promedio{
     width: 100%; /* Ocupa todo el ancho disponible */
     height: 48px; /* Altura fija para una apariencia consistente */
     border-radius: 24px; /* Redondear las esquinas */
@@ -48,6 +113,82 @@ h2 {
     margin-bottom: 16px; /* Espacio inferior entre los campos */
 }
 
+.lblID{
+    position:absolute;
+    top: 18%;
+    left: 16%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
+.inputID:focus~.lblID,
+.inputID:valid~.lblID{
+    top:14.5%;
+    left:16%;
+    font-size: 16px;
+    background: #364042;
+    z-index: -1;
+}
+.lblRUT{
+    position:absolute;
+    top: 25%;
+    left: 16%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
+.inputRUT:focus~.lblRUT,
+.inputRUT:valid~.lblRUT{
+    top:14.5%;
+    left:16%;
+    font-size: 16px;
+    background: #364042;
+    z-index: 2;
+}
+.lblNombre{
+    position:absolute;
+    top: 31.5%;
+    left: 16%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
+.lblApellido{
+    position:absolute;
+    top: 38%;
+    left: 16%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
+.lblEdad{
+    position:absolute;
+    top: 45%;
+    left: 16%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
+.lblPromedio{
+    position:absolute;
+    top: 52%;
+    left: 16%;
+    transform: translateY(-50%);
+    color: #49D3F0;
+    font-size: 16px; /* ajusta según sea necesario */
+    transition: .3s;
+    z-index: 1; /* cambia a 1 o valor superior */
+}
 /*Faltan los Label con su animacion culia*/
 /*COMBO BOX COSOS::*/
 select{
@@ -161,8 +302,8 @@ select{
 
 .input-field2 input[type="text"]{
     position: relative;
-    margin: -15px;
-    width: 55vh;
+    margin: -20px;
+    width: 40vh;
     height: 6vh;
     border-radius: 50px;
     font-size: 16px;
@@ -175,7 +316,7 @@ select{
 
 .input-field2 .lblBus{
     position:absolute;
-    top: 20%;
+    top: 10%;
     left: 5%;
     transform: translateY(-50%);
     color: #49D3F0;
