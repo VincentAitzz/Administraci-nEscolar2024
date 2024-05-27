@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h2>Administracion de Alumnos</h2>
-        <form id="dataForm" class="" method="POST">
+        <form id="dataForm" class="input-field" method="POST">
             <input type="text" id="ID" class="inputID" required>
             <label  for="ID" class="lblID">ID</label>
             <br>
