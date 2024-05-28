@@ -166,10 +166,10 @@
                     return $(this).text();
                 }).get();
                 
-                $('#id').val(rowData[0]);
-                $('#rut').val(rowData[1]);
-                $('#nombre').val(rowData[2]);
-                $('#apellidos').val(rowData[3]);
+                $('#ID').val(rowData[0]);
+                $('#RUT').val(rowData[1]);
+                $('#Nombre').val(rowData[2]);
+                $('#Apellidos').val(rowData[3]);
                 $('#Edad').val(rowData[4]);
                 $('#Promedio').val(rowData[5]);
                 $('#Apoderado').val(rowData[6]);

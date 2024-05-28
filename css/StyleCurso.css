@@ -176,7 +176,7 @@ select{
 }
 
 .input-field2 input[type="text"] {
-    top: 1px;
+    top: 20px;
     width: 600px; /* Ocupa todo el ancho disponible */
     height: 48px; /* Aumenta la altura */
     border-radius: 24px; /* Redondear las esquinas */
@@ -187,7 +187,7 @@ select{
     color: #49D3F0; /* Color de texto */
     outline: none; /* Eliminar borde de enfoque */
     box-sizing: border-box; /* Incluir el borde en el tamaño total */
-    position: relative; /* Asegurarse de que el pseudo-elemento se posicione correctamente */
+    position: absolute; /* Asegurarse de que el pseudo-elemento se posicione correctamente */
 }
 
 
