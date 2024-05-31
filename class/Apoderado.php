@@ -10,7 +10,7 @@
     <div class="container">
         <h2>Administración de Apoderados</h2>
         <form id="dataForm" class="input-field" method="POST">
-            <input type="" name="id" id="id">
+            <input type="" name="id" id="id" disabled>
             <label class="lblID">ID</label>
             <br>
             <input type="text" id="rut" name="rut" class="inputRUT" required>
@@ -29,6 +29,7 @@
                 <input type="submit" value="Ingresar" class="btnCRUD" id="Ingresar">
                 <input type="submit" value="Editar" class="btnCRUD" id="Editar">
                 <input type="submit" value="Eliminar" class="btnCRUD" id="Eliminar">
+                <input type="button" value="Limpiar" class="btnLimpiar" id="Limpiar" onclick="limpiarCampos()">
             </div>
         </form>
     </div>
@@ -140,4 +141,5 @@
 <script src="../js/alertaInsApoderado.js"></script>
 <script src="../js/alertaAltApoderado.js"></script>
 <script src="../js/alertaDelApoderado.js"></script>
+<script src="../js/limpiarCampos.js"></script>
 </html>

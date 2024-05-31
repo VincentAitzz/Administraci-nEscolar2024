@@ -11,14 +11,16 @@
 <body>
     <div class="container">
         <h2>Administracion De alumnos</h2>
-    
             <div class="input-field">
                 <!-- Rut-->
-                <input type="text" id="rutAlumno" class="inputRut" required>
+                <input type="text" id="id" class="id" disabled>
+                <label for="rutAlumno" class="lblID">ID</label>
+                <br>
+                <input type="text" id="rut" class="rut" required>
                 <label for="rutAlumno" class="lblRut">RUT</label>
                 <br>
                 <!-- Nombre-->
-                <input type="text" id="nombre" name="nombre" class="inputNombre" required>
+                <input type="text" id="nombre" name="nombre" class="nombre" required>
                 <label for="nombre" class="lblNombre">Nombre</label>
                 <br>
                 <!--Apellido-->
@@ -42,8 +44,7 @@
                 <!--CURSO:-->
                 <select id="cursoAlumnos" name="cursoAlumnos">
                         <option value="">Seleccione Curso...</option>
-                        <?php include '../actionsPhp/cargarCurso.php';?>
-                        <!-- Más cursos según necesario -->
+                        <?php include '../actionsPhp/cbCurso.php';?>
                 </select>
                 <br>
                 <div class="buttonsCRUD">

@@ -13,7 +13,12 @@
     <div class="container">
         <h2>Administración de Empleados</h2>
         <form id="dataForm" class="input-field" method="POST">
-            <input type="" name="id" id="id">
+
+            <!--        El separado encerrado aca es el que tiene el valor para hacer la comparacion en el JS-->
+            <input type="" name="nombreTabla" id="nombreTabla" value="Empleado" hidden>
+
+
+            <input type="" name="id" id="id" disabled>
             <label class="lblID">ID</label>
             <br>
             <input type="text" id="rut" name="rut" class="inputRUT" required>
@@ -58,6 +63,7 @@
                 <input type="submit" value="Ingresar" class="btnCRUD" id="Ingresar">
                 <input type="submit" value="Editar" class="btnCRUD" id="Editar">
                 <input type="submit" value="Eliminar" class="btnCRUD" id="Eliminar">
+                <input type="button" value="Limpiar" class="btnLimpiar" id="Limpiar" onclick="limpiarCampos()">
             </div>
         </form>
     </div>
@@ -181,8 +187,11 @@
         });
     });
 </script>
-<!-- <span class="loader"></span> -->
-<script src="../js/alertaInsEmpleado.js"></script>
+<!-- <span class="loader"></span> 
+<script src="../js/alertaInsEmpleado.js"></script>-->
+<script src="../js/Inserts.js"></script>
+<!--
 <script src="../js/alertaAltEmpleado.js"></script>
 <script src="../js/alertaDelEmpleado.js"></script>
+<script src="../js/limpiarCampos.js"></script>-->
 </html>
