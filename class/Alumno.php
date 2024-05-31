@@ -9,9 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración | Alumnos</title>
-    <link rel="stylesheet" href="../css/StyleAlumno.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../actionsPhp/agregarAlumno.js'></script>
 </head>
 <body>
     <div class="container">
@@ -47,13 +45,13 @@
             <!-- Apoderado-->
             <select id="apoderado" name="apoderado">
                 <option value="">Seleccionar Apoderado..</option>
-                <?php include '../actionsPhp/Alumnos/cargarApoderado.php';?>
+                <?php include '../actionsPhp/Comboboxs/cargarApoderadoAlumno.php';?>
             </select>
             <br>
             <!-- Curso-->
             <select id="curso" name="curso">
                 <option value="">Seleccione Curso..</option>
-                <?php include '../actionsPhp/Alumnos/cargarCurso.php';?>
+                <?php include '../actionsPhp/Comboboxs/cargarCursoAlumno.php';?>
             </select>
             <br>
             <!-- Botones -->
@@ -92,8 +90,26 @@
             </tr>
         </thead>
         <tbody id="tablebody"></tbody>
+        <?php include '../actionsPhp/Tablas/CargarTablas.php'?>
     </table>
-    
+    <script>
+        $(document).ready(function(){
+    // Función para manejar el cambio en el combo box
+    $('select[name="camposDisponibles"]').change(function(){
+        var campo = $(this).val(); // Obtener el valor seleccionado
+        var valor = $('.inputBus').val(); // Obtener el valor ingresado
+        // Realizar la solicitud AJAX
+        $.ajax({
+            url: '../actionsPhp/Buscadores/BusAlumno.php',
+            type: 'POST',
+            data: {campo: campo, valor: valor},
+            success: function(response){
+                $('#tablebody').html(response); // Actualizar la tabla con los resultados filtrados
+            }
+        });
+    });
+});
+    </script>
     <br>
     <div id="btnPaginacion"></div>
     <div class="btnVolver">

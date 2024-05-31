@@ -3,9 +3,9 @@
 if (isset($_POST['ID'])) {
     // Incluir la conexión a la base de datos (reemplaza los valores con los de tu configuración)
     $servername = "localhost";
-    $username = "username";
-    $password = "password";
-    $dbname = "nombre_base_de_datos";
+    $username = "root";
+    $password = "";
+    $dbname = "colegioweb";
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $dbname);
