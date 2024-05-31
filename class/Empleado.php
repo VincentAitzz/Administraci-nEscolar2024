@@ -5,32 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración | Empleado</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/switchButtonC.css">
-    <link rel="stylesheet" href="../css/switchButtonE.css">
     <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/Empleado.css">
+    <link rel="stylesheet" href="../css/checkBox.css">
+    <link rel="stylesheet" href="../css/textFields.css">
+    <link rel="stylesheet" href="../css/comboBox.css">
 </head>
 <body>
-    <div class="container">
+    <div class="contenedorMaster">
+        <div class="contenedorForm">
         <h2>Administración de Empleados</h2>
         <form id="dataForm" class="input-field" method="POST">
-
             <!--        El separado encerrado aca es el que tiene el valor para hacer la comparacion en el JS-->
             <input type="" name="nombreTabla" id="nombreTabla" value="Empleado" hidden>
 
-
-            <input type="" name="id" id="id" disabled>
-            <label class="lblID">ID</label>
-            <br>
-            <input type="text" id="rut" name="rut" class="inputRUT" required>
-            <label class="lblRUT">RUT</label>
-            <br>
-            <input type="text" id="nombre" name="nombre" class="inputNombre" required>
-            <label class="lblNombre">Nombre</label>
-            <br>
-            <input type="text" id="apellidos" name="apellidos" class="inputApellido" required>
-            <label class="lblApellido">Apellidos</label>
-            <br>
-            <select name="cargo" id="cargo">
+            <div class="contenedorCampos">
+                <div class="contenedorSingCampos">
+                    <label class="lblID">ID</label>
+                    <input type="" name="id" id="id" disabled class="textFieldDes">
+                </div>
+                <div class="contenedorSingCampos">
+                    <label class="lbl">RUT</label>
+                    <input type="text" id="rut" name="rut" class="textField" required>
+                </div>
+                <div class="contenedorSingCampos">
+                    <label class="lbl">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="textField" required>
+                </div>
+                <div class="contenedorSingCampos">
+                    <label class="lbl">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" class="textField" required>
+                </div>
+                <div class="contenedorSingCampos">
+                <label class="lbl">Contacto</label>
+                    <input type="text" id="contacto" name="contacto" class="textField" required>
+                </div>
+            <select name="cargo" id="cargo" class="comboBox">
                 <option value="">Seleccione Cargo</option>
                 <option value="Encargado de aseo">Encargado de Aseo</option>
                 <option value="Profesor">Profesor</option>
@@ -42,23 +53,21 @@
             <br>
             <label class="lblContrato">Si no esta marcado se asignara como Indefinido *</label>
             <br>
-            <div class="tipo-contrato">
-                <input type="checkbox" name="tipo-contrato" id="tipo-label" class="tipo-button__checkbox">
-                <label for="tipo-label" class="tipo-button__label"></label>
+            <div class="cbContenedor">
+                <input type="checkbox" name="tipo-contrato" id="tipo-label" class="button__checkbox">
+                <label for="tipo-label" class="button__label"></label>
             </div>
             <br>
             <label class="lblEstado">Estado</label>
             <br>
             <label class="lblEstado">Si no esta marcado se asignara como inactivo *</label>
             <br>
-            <div class="estado-contrato">
-                <input type="checkbox" name="estado-contrato" id="estado-label" class="estado-button__checkbox">
-                <label for="estado-label" class="estado-button__label"></label>
+            <div class="cbContenedor">
+                <input type="checkbox" name="estado-contrato" id="estado-label" class="button__checkbox">
+                <label for="estado-label" class="button__label"></label>
             </div>
             <br>
-            <input type="text" id="contacto" name="contacto" class="inputContacto" required>
-            <label class="lblContacto">Contacto</label>
-            <br>
+            </div>
             <div class="buttonsCRUD">
                 <input type="submit" value="Ingresar" class="btnCRUD" id="Ingresar">
                 <input type="submit" value="Editar" class="btnCRUD" id="Editar">
@@ -67,20 +76,20 @@
             </div>
         </form>
     </div>
-    <div class="input-field2">
-        <input type="text" class="inputBus" required>
+    <div class="contenedorData">
+        <input type="text" class="textFieldBuscador" required>
         <label class="lblBus">Buscador</label>
-        <select name="camposDisponibles">
+        <select name="camposDisponibles" class="comboBox">
             <option value="ID">ID</option>
             <option value="RUT">RUT</option>
             <option value="Nombre">Nombre</option>
             <option value="Apellidos">Apellidos</option>
         </select>   
-    </div>
    
     <table id="tabla-empleado">
         <thead>
             <tr>
+                <th>•</th>
                 <th>ID</th>
                 <th>RUT</th>
                 <th>Nombre</th>
@@ -121,6 +130,7 @@
             filas.forEach(fila => {
                 var tr = document.createElement('tr');
                 tr.innerHTML = `
+                <td>»</td>
                 <td>${fila.ID}</td>
                 <td>${fila.RUT}</td>
                 <td>${fila.Nombre}</td>
@@ -135,7 +145,7 @@
 
         function filtrarDatos() {
             var campo = document.querySelector('select[name="camposDisponibles"]').value;
-            var busqueda = document.querySelector('.inputBus').value.toLowerCase();
+            var busqueda = document.querySelector('.textFieldBuscador').value.toLowerCase();
 
             if (busqueda === '') {
                 mostrarPagina(paginaActual);
@@ -162,9 +172,11 @@
             }
         }
 
-        document.querySelector('.inputBus').addEventListener('input', filtrarDatos);
+        document.querySelector('.textFieldBuscador').addEventListener('input', filtrarDatos);
         obtenerDatos();
     </script>
+    </div>
+    </div>
     <div class="btnVolver">
         <a href="../HUB.php" class="btn -btnVolver">Volver</a>
     </div>
@@ -176,22 +188,17 @@
                 return $(this).text();
             }).get();
                 
-            $('#id').val(rowData[0]);
-            $('#rut').val(rowData[1]);
-            $('#nombre').val(rowData[2]);
-            $('#apellidos').val(rowData[3]);
-            $('#cargo').val(rowData[4]);
-            $('#tipo-label').prop('checked', rowData[5] === 'Definido');
-            $('#estado-label').prop('checked', rowData[6] === 'Activo');
-            $('#contacto').val(rowData[7]);
+            $('#id').val(rowData[1]);
+            $('#rut').val(rowData[2]);
+            $('#nombre').val(rowData[3]);
+            $('#apellidos').val(rowData[4]);
+            $('#cargo').val(rowData[5]);
+            $('#tipo-label').prop('checked', rowData[6] === 'Definido');
+            $('#estado-label').prop('checked', rowData[7] === 'Activo');
+            $('#contacto').val(rowData[8]);
         });
     });
 </script>
-<!-- <span class="loader"></span> 
-<script src="../js/alertaInsEmpleado.js"></script>-->
+<!-- <span class="loader"></span> -->
 <script src="../js/Inserts.js"></script>
-<!--
-<script src="../js/alertaAltEmpleado.js"></script>
-<script src="../js/alertaDelEmpleado.js"></script>
-<script src="../js/limpiarCampos.js"></script>-->
 </html>

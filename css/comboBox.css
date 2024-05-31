@@ -1,0 +1,25 @@
+.comboBox {
+    border: 2px solid var(--color-bordes-cbox); /* Establece el color de los bordes */
+    border-radius: 25px; /* Agrega bordes redondeados */
+    background-color: var(--color-fondo-cbox); /* Establece el color de fondo */
+    padding: 10px; /* Añade relleno al combo box */
+    color: var(--color-texto-cbox); /* Define el color del texto */
+    font-family: var(--fuente-texto); /* Aplica la fuente "Antonio" al texto */
+}
+
+/* Estilos adicionales si es necesario */
+.comboBox::placeholder {
+    color: var(--color-bordes-deshabilitado); /* Define el color del texto de marcador de posición */
+}
+
+.comboBox:focus {
+    outline: none; /* Elimina el resplandor de enfoque */
+    border-color: #58A6B7; /* Cambia el color del borde al enfocar */
+}
+
+/* Estilos para el dropdown (opciones) del combobox */
+.comboBox option {
+    background-color: var(--color-fondo); /* Cambia el color de fondo de las opciones */
+    color: var(--color-texto); /* Cambia el color del texto de las opciones */
+    font-family: var(--fuente-texto); /* Aplica la fuente "Antonio" al texto de las opciones */
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
+:root{
+    --Fondos: #364042;
+    --Mayoria: #48D4F0;
+}
+body{
+    color: var(--Mayoria);
+    font-family: "Antonio", sans-serif;
+    background-color: var(--Fondos);
+}
+.contenedorMaster{
+    display: grid;
+    grid-template-columns: 45% 52%;
+    gap: 2vw; /* Espacio del 10% de la pantalla */
+}
+.contenedorForm{
+    border: 2px solid var(--Mayoria);
+    border-radius: 25px;
+}
+.contenedorForm, .contenedorData{
+    
+    min-width: 200px; /* Límite de minimización horizontal */
+}
+@media screen and (m-width: 800px){
+    .contenedorMaster{
+        grid-template-columns: 1fr;;
+    }
+    .contenedor-derecho {
+        grid-row: 2; /* Mueve el segundo contenedor a la segunda fila */
+      }
+}  

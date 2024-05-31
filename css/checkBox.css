@@ -1,0 +1,31 @@
+.cbContenedor {
+    display: inline-block;
+}
+.cbContenedor .button__checkbox {
+    display: none;
+}
+.cbContenedor .button__label {
+    background-color: var(--color-no);
+    width: 5rem;
+    height: 3rem;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.cbContenedor .button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.cbContenedor .button__checkbox:checked + .button__label {
+    background-color: var(--color-si);
+}
+.cbContenedor .button__checkbox:checked + .button__label:before {
+    transform: translateX(2rem);
+}

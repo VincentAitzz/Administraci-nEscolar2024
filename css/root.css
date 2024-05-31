@@ -1,0 +1,18 @@
+:root {
+    --color-bordes: #48D4F0;
+    --color-bordes-deshabilitado:#256370;
+    --color-fondo: #364042;
+    --color-texto: var(--color-bordes);
+    --fuente-texto: "Antonio", sans-serif;
+
+    --color-bordes-cbox: var(--color-fondo);
+    --color-fondo-cbox: var(--color-bordes);
+    --color-texto-cbox: var(--color-fondo);
+
+    --color-si: var(--color-bordes);
+    --color-no: #252d2e;
+    --color-button: var(--color-bordes);
+    --color-black: var(--color-fondo);
+
+    
+}

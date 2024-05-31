@@ -1,0 +1,64 @@
+.contenedorSingCampos{
+    display: grid;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.textFieldDes {
+    border: 2px solid var(--color-bordes-deshabilitado); /* Establece el borde con el color definido en --color-bordes */
+    border-radius: 25px; /* Agrega bordes redondeados */
+    background-color: var(--color-fondo); /* Establece el color de fondo */
+    padding: 10px; /* Añade relleno al campo de texto */
+    color: var(--color-bordes); /* Define el color del texto */
+    font-family: var(--fuente-texto);
+}
+
+/* Estilos adicionales si es necesario */
+.textFieldDes::placeholder {
+    color: lightgrey; /* Define el color del texto de marcador de posición */
+}
+
+.textFieldBuscador {
+    border: 2px solid var(--color-bordes); /* Establece el borde con el color definido en --color-bordes */
+    border-radius: 25px; /* Agrega bordes redondeados */
+    background-color: var(--color-fondo); /* Establece el color de fondo */
+    padding: 10px; /* Añade relleno al campo de texto */
+    color: var(--color-bordes); /* Define el color del texto */
+    font-family: var(--fuente-texto);
+}
+
+/* Estilos adicionales si es necesario */
+.textFieldBuscador::placeholder {
+    color: lightgrey; /* Define el color del texto de marcador de posición */
+}
+
+.textField {
+    border: 2px solid var(--color-bordes); /* Establece el borde con el color definido en --color-bordes */
+    border-radius: 25px; /* Agrega bordes redondeados */
+    background-color: var(--color-fondo); /* Establece el color de fondo */
+    padding: 10px; /* Añade relleno al campo de texto */
+    color: var(--color-bordes); /* Define el color del texto */
+    font-family: var(--fuente-texto);
+}
+
+/* Estilos adicionales si es necesario */
+.textField::placeholder {
+    color: lightgrey; /* Define el color del texto de marcador de posición */
+}
+
+.textField:focus {
+    outline: none; /* Elimina el resplandor de enfoque */
+    border-color: #58A6B7; /* Cambia el color del borde al enfocar */
+}
+
+.lblID{
+    position: absolute;
+    padding-top: 1.2vh;
+    padding-left: 1.2vh;
+    color: var(--color-bordes-deshabilitado);
+}
+.lbl{
+    position: absolute;
+    padding-top: 1.2vh;
+    padding-left: 1.2vh;
+    color: var(--color-bordes);
+}
