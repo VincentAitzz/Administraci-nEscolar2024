@@ -1,0 +1,4 @@
+Aca te explico mejor
+
+Los archivos que tengan el prefijo "DES" estan para sacar el codigo de ahi como BASE, no codigo final,
+los que no tengan prefijo es por que esos si se quedan.
