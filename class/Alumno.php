@@ -1,3 +1,8 @@
+<?php include '../actionsPhp/Agregar.php'; ?>
+<?php include '../actionsPhp/Actualizar.php'; ?>
+<?php include '../actionsPhp/Eliminar.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,91 +99,5 @@
     <div class="btnVolver">
         <a href="../HUB.php" class="btn -btnVolver">Volver</a>
     </div>
-    <script>
-        var datos=[];
-        var paginaActual = 1;
-        var filasporPagina = 6;
-        // Datos para la tabla
-        function obtenerDatos(){
-            fetch('../actionsPhp/Alumnos/IdAlumno.php')
-            .then(response => response.json())
-            .then(data => {
-                datos = data;
-                mostrarPagina(paginaActual);
-                generarBotones();
-            })
-            .catch(error=>console.error('Error:',error));
-        }
-        // paginas de la tabla
-        function mostrarPagina(pagina, datosParaMostrar = datos){
-            var inicio=(pagina -1) * filasporPagina;
-            var fin= inicio + filasporPagina;
-            var filas = datosParaMostrar.slice(inicio,fin);
-
-            var tbody=document.getElementById('tablebody');
-            tbody.innerHTML = '';
-
-            filas.forEach(fila =>{
-                var tr= document.createElement('tr');
-                tr.innerHTML = `<td>${fila.ID}</td><td>${fila.RUT}</td><td>${fila.Nombre}</td><td>${fila.Apellido}</td><td>${fila.Edad}</td><td>${fila.PromedioGeneral}</td><td>${fila.Apoderado}</td><td>${fila.Curso}</td>`;
-                tbody.appendChild(tr);
-            });
-        }
-        // Funcion busqueda
-        function filtrarDatos(){
-            var campo = document.querySelector('select[name="camposDisponibles"]').value;
-            var busqueda = document.querySelector('.inputBus').value.toLowerCase();
-
-            if (busqueda === ''){
-                mostrarPagina(paginaActual);
-            } else {
-                var datosFiltrados = datos.filter(function(fila) {
-                    return fila[campo].toLowerCase().includes(busqueda);
-                });
-                mostrarPagina(1, datosFiltrados);
-            }
-        }
-
-        // botones paginacion
-        function generarBotones(){
-            var numeroDePaginas = Math.ceil(datos.length / filasporPagina);
-            var contenedor = document.getElementById('btnPaginacion');
-            
-            for (var i = 1; i <= numeroDePaginas; i++) {
-                var boton = document.createElement('button'); // Crear un nuevo botón
-                boton.textContent = i;
-                boton.addEventListener('click', function(){
-                    paginaActual = parseInt(this.textContent);
-                    mostrarPagina(paginaActual);
-                });
-                contenedor.appendChild(boton);
-            }
-        }
-
-        document.querySelector('.inputBus').addEventListener('input',filtrarDatos);
-        obtenerDatos();
-    </script>
-    <script>
-        //script de la tabla para q funcione
-        $(document).ready(function(){
-            $('#tabla-alumnos tbody').on('click', 'tr', function(){
-                var rowData = $(this).children('td').map(function(){
-                    return $(this).text();
-                }).get();
-                
-                $('#ID').val(rowData[0]);
-                $('#RUT').val(rowData[1]);
-                $('#Nombre').val(rowData[2]);
-                $('#Apellidos').val(rowData[3]);
-                $('#Edad').val(rowData[4]);
-                $('#Promedio').val(rowData[5]);
-                $('#Apoderado').val(rowData[6]);
-                $('#Curso').val(rowData[7]);
-            });
-        });
-    </script>
-    <script src="../js/Alumnos/alertaInsAlumno.js"></script>
-    <script src="../js/Alumnos/alertaActAlumno.js"></script>
-    <script src="../js/Alumnos/alertaDelAlumno.js"></script>
 </body>
 </html>
