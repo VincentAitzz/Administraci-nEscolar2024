@@ -69,15 +69,15 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
             };
             xhr.send(JSON.stringify(datos));
             break;
-            case 'Alumnos':
+            case 'Alumno':
             // Extracción de datos del formulario
             var rut = document.querySelector('input[name="rut"]').value;
             var nombre = document.querySelector('input[name="nombre"]').value;
             var apellidos = document.querySelector('input[name="apellidos"]').value;
             var edad = document.querySelector('input[name="edad"]').value;
             var promedio = document.querySelector('input[name="promedio"]').value;
-            var apoderado = document.querySelector('input[name="apoderado"]').value;
-            var curso = document.querySelector('input[name="curso"]').value;
+            var apoderado = document.querySelector('select[name="apoderado"]').value;
+            var curso = document.querySelector('select[name="curso"]').value;
 
             // Codificación de datos a JSON
             var datos = {
@@ -121,6 +121,7 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                     alert(this.responseText);
+                    obtenerDatos();
                 };
                 xhr.send(JSON.stringify(datos));
                 
@@ -142,6 +143,7 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
                     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                     xhr.onload = function() {
                         alert(this.responseText);
+                        obtenerDatos();
                     };
                     xhr.send(JSON.stringify(datos));
                     
@@ -150,7 +152,7 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
             //clase,asignatura
                 case 'Clase':
                     //Profesor se suipone que viene de empleado asique hace un cb;
-                    var Nombre = document.querySelector('input[name="Nombre"]').value;
+                    var Nombre = document.querySelector('select[name="Nombre"]').value;
                     var Profesor = document.querySelector('select[name="Profesor"]').value;
                     var Curso = document.querySelector('select[name="Curso"]').value;
                     var Aula = document.querySelector('input[name="Aula"]').value;
@@ -170,6 +172,7 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
                     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                     xhr.onload = function() {
                         alert(this.responseText);
+                        obtenerDatos();
                     };
                     xhr.send(JSON.stringify(datos));
                     
@@ -188,6 +191,7 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
                     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                     xhr.onload = function() {
                         alert(this.responseText);
+                        obtenerDatos();
                     };
                     xhr.send(JSON.stringify(datos));
                     break;

@@ -10,7 +10,7 @@
         die("Error al conectar: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM Nivel";
+    $sql = "SELECT * FROM Clase";
     $result = $conn->query($sql);
 
     $data = [];

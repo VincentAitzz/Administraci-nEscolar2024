@@ -72,8 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $Apoderado = $datos['apoderado'];
                     $Curso = $datos['curso'];
         
-                    $stmt = $conexion->prepare("UPDATE alumnos SET RUT = ?, Nombre =?, Apellido =?, Edad =?, PromedioGeneral =?, Apoderado =?, Curso =? Where ID = ?)");
-                    $stmt->bind_param("sssiisii", $RUT, $Nombre, $Apellido, $Edad, $PromedioGeneral, $Apoderado, $Curso,$ID);
+                    $stmt = $conexion->prepare("UPDATE alumnos SET RUT = ?, Nombre =?, Apellido =?, Edad =?, PromedioGeneral =?, Apoderado =?, Curso =? Where ID = ?");
+                    $stmt->bind_param("ssssiisi", $RUT, $Nombre, $Apellido, $Edad, $PromedioGeneral, $Apoderado, $Curso, $ID);
+
+
         
                     if ($stmt->execute()) {
                         echo "Registro actualizado con éxito";
@@ -81,7 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         echo "Error al actualizar el registro: " . $conexion->error;
                     }
                     break;
-            break;
 
         case 'Curso':
             $ID = $datos['id'];
@@ -99,13 +100,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             break;
 
-        case 'Nivel':
+        case 'nivel':
             // Aquí iría la lógica para actualizar un nivel
                     $ID = $datos['id'];
-                    $Grado = $datos['grado'];
-                     $Categoria = $datos['categoria'];
+                    $Grado = $datos['Grado'];
+                     $Categoria = $datos['Categoria'];
                         
-                    $stmt = $conexion->prepare("UPDATE nivel SET Grado = ?, Categoria = ? WHERE ID =?)");
+                     $stmt = $conexion->prepare("UPDATE nivel SET Grado = ?, Categoria = ? WHERE ID = ?");
                     $stmt->bind_param("ssi", $Grado, $Categoria,$ID);
                         
                     if ($stmt->execute()) {

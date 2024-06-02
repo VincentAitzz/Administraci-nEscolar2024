@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 'Asignatura':
             $ID = $datos['id'];
 
-            $stmt = $conexion->prepare("DELETE FROM Apoderado WHERE ID = ?");
+            $stmt = $conexion->prepare("Delete from Asignatura where ID = ?");
             $stmt->bind_param("i",$ID);
 
             if($stmt->execute()){

@@ -18,7 +18,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                 NumeroAlumnos : NumeroAlumnos
             };
             var xhr = new XMLHttpRequest();
-            xhr.open('POST','../actionsPhp/Update.php', true);
+            xhr.open('POST','../actionsPhp/UPDATE.php', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
@@ -51,7 +51,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
             };
 
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '../actionsPhp/INSERT.php', true);
+            xhr.open('POST', '../actionsPhp/UPDATE.php', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
                         alert(this.responseText);
@@ -61,7 +61,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
             break;
             case 'Alumno':
                 var id = document.querySelector('input[name="id"]').value;
-                var rut = document.querySelector('input[name="RUT"]').value;
+                var rut = document.querySelector('input[name="rut"]').value;
                 var nombre = document.querySelector('input[name="nombre"]').value;
                 var apellidos = document.querySelector('input[name="apellidos"]').value;
                 var edad = document.querySelector('input[name="edad"]').value;
@@ -81,7 +81,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                     id : id
                 };
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '../actionsPhp/INSERT.php', true);
+                xhr.open('POST', '../actionsPhp/UPDATE.php', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                             alert(this.responseText);
@@ -105,7 +105,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                     id : id
                 };
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '../actionsPhp/INSERT.php', true);
+                xhr.open('POST', '../actionsPhp/UPDATE.php', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                             alert(this.responseText);
@@ -117,7 +117,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
             case 'Asignatura':
                 var id = document.querySelector('input[name="id"]').value;
                 var Nombre = document.querySelector('input[name="Nombre"]').value;
-                var Profesor = document.querySelector('input[name="Profesor"]').value;
+                var Profesor = document.querySelector('select[name="Profesor"]').value;
                 var xhr = new XMLHttpRequest();
 
                 var datos={
@@ -126,7 +126,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                     Profesor : Profesor,
                     id : id
                 };
-                xhr.open('POST', '../actionsPhp/INSERT.php', true);
+                xhr.open('POST', '../actionsPhp/UPDATE.php', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                             alert(this.responseText);
@@ -153,7 +153,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                     id : id
                 };
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '../actionsPhp/INSERT.php', true);
+                xhr.open('POST', '../actionsPhp/UPDATE.php', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                             alert(this.responseText);
@@ -174,7 +174,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                     id : id
                 }
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '../actionsPhp/INSERT.php', true);
+                xhr.open('POST', '../actionsPhp/UPDATE.php', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.onload = function() {
                             alert(this.responseText);

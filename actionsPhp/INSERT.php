@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $Curso = $datos['curso'];
         
                     $stmt = $conexion->prepare("INSERT INTO alumnos(RUT,Nombre,Apellido,Edad,PromedioGeneral,Apoderado,Curso) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                    $stmt->bind_param("sssiisi", $RUT, $Nombre, $Apellido, $Edad, $PromedioGeneral, $Apoderado, $Curso);
+                    $stmt->bind_param("sssiiss", $RUT, $Nombre, $Apellido, $Edad, $PromedioGeneral, $Apoderado, $Curso);
         
                     if ($stmt->execute()) {
                         echo "Registro insertado con éxito";
@@ -106,15 +106,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $Curso = $datos['Curso'];
                         $Aula = $datos['Aula'];
                         $Fecha = $datos['Fecha'];
-                        $stmt = $conexion->prepare("INSERT INTO Clase NombreAsig,Profesor,Curso,Aula,Fecha_Hora) values (?,?,?,?,?)");
-                        $stmt->bind_param("siiss",$Nombre,$Profesor,$Curso,$Aula,$Fecha);
+                        $stmt = $conexion->prepare("INSERT INTO Clase (NombreAsig, Profesor, Curso, Aula, Fecha_Hora) VALUES (?, ?, ?, ?, ?)");
+                        $stmt->bind_param("ssiss", $Nombre, $Profesor, $Curso, $Aula, $Fecha);
 
                         if($stmt->execute()){
                             echo "Registro insertado con exito";
                         }else{
-                            echo "Error al insertar el registro" . $conexion.error;
+                            echo "Error al insertar el registro" . $conexion->error;
                         }
-            
+                        break;
+                    case 'Asignatura':
+                        $Nombre = $datos['Nombre'];
+                        $Profesor = $datos['Profesor'];
+
+                        $stmt = $conexion->prepare("INSERT INTO Asignatura (Nombre,Profesor) values (?,?)");
+                        $stmt->bind_param("si",$Nombre,$Profesor);
+
+                        if($stmt->execute()){
+                            echo "Registro insertado con exito";
+                        }else{
+                            echo "Error al insertar el registro" . $conexion->error;
+                        }
+                        break;
                     default:
                         echo "Tabla no válida";
     }

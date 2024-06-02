@@ -17,9 +17,9 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
         
         case 'Alumno':
@@ -35,10 +35,11 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
+
         case 'Apoderado':
             var id = document.querySelector('input[name="id"]').value;
 
@@ -52,10 +53,11 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
+
         case 'Empleado':
             var id = document.querySelector('input[name="id"]').value;
 
@@ -69,10 +71,11 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
+
         case 'Clase':
             var id = document.querySelector('input[name="id"]').value;
 
@@ -86,10 +89,11 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
+
         case 'Asignatura':
             var id = document.querySelector('input[name="id"]').value;
 
@@ -103,10 +107,11 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
+
         case 'Nivel':
             var id = document.querySelector('input[name="id"]').value;
 
@@ -120,10 +125,11 @@ document.getElementById('Eliminar').addEventListener('click', function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             };
             xhr.send(JSON.stringify(datos));
-            
             break;
+
         default:
         alert("Tabla desconocida");
     }

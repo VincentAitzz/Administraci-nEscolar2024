@@ -1,16 +1,16 @@
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+<?php 
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
     $dbname = "colegioweb";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($server, $user, $pass, $dbname);
 
     if ($conn->connect_error) {
         die("Error al conectar: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM Nivel";
+    $sql = "SELECT * FROM Alumnos";
     $result = $conn->query($sql);
 
     $data = [];
