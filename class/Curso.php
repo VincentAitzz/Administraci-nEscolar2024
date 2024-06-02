@@ -17,7 +17,7 @@
             <br>
             <select name="nivel" id="nivel">
                 <option value="">Seleccione nivel..</option>
-                <?php include '../actionsPhp/CargarNivel.php'?>
+                <?php include '../actionsPhp/Combobox/CargarNivel.php'?>
             </select>
             <br>
             <select name="letra" id="letra">
@@ -35,9 +35,9 @@
             <label class="lblNumeroAlumnos">Numero de Alumnos</label>
             <br>
             <div class="buttonsCRUD">
-                <input type="submit" value="Ingresar" class="btnCRUD" id="Ingresar">
-                <input type="submit" value="Editar" class="btnCRUD" id="Editar">
-                <input type="submit" value="Eliminar" class="btnCRUD" id="Eliminar">
+                <input type="button" value="Ingresar" class="btnCRUD" id="Ingresar">
+                <input type="button" value="Editar" class="btnCRUD" id="Editar">
+                <input type="button" value="Eliminar" class="btnCRUD" id="Eliminar">
                 <input type="button" value="Limpiar" class="btnLimpiar" id="Limpiar" onclick="limpiarCampos()">
             </div>
         </form>
@@ -70,7 +70,7 @@
         var filasPorPagina = 6;
 
         function obtenerDatos(){
-            fetch('../actionsPhp/ldCurso.php')
+            fetch('../actionsPhp/load/ldCurso.php')
             .then(response => response.json())
             .then(data => {
                 datos = data;
@@ -147,11 +147,10 @@
         });
     });
 </script>
-<!-- <span class="loader"></span> 
-<script src="../js/alertaInsEmpleado.js"></script>-->
+<!-- <span class="loader"></span> -->
+<script src= "../js/update.js"></script>
 <script src="../js/Inserts.js"></script>
-<!--
-<script src="../js/alertaAltEmpleado.js"></script>
-<script src="../js/alertaDelEmpleado.js"></script>
-<script src="../js/limpiarCampos.js"></script>-->
+<script src="../js/Delete.js"></script>
+<script src="../js/limpiar.js"></script>
+
 </html>

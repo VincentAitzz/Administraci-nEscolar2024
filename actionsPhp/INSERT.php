@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     switch ($datos['tabla']) {
-        case "Empleado":
+        case 'Empleado':
             $RUT = $datos['rut'];
             $Nombre = $datos['nombre'];
             $Apellido = $datos['apellidos'];
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "Error al insertar el registro" . $conexion->error;
                 }
                 break;
-                case 'Alumnos':
+                case 'Alumno':
                     $RUT = $datos['rut'];
                     $Nombre = $datos['nombre'];
                     $Apellido = $datos['apellidos'];
@@ -85,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         }else{
                             echo "Error al insertar el registro: " . $conexion->error;
                         }
+                        break;
                      case 'Nivel':
                             $Grado = $datos['grado'];
                             $Categoria = $datos['categoria'];
@@ -97,8 +98,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             } else {
                                 echo "Error al insertar el registro: " . $conexion->error;
                             }
+                            
                      break;
-                        
+                    case 'Clase':
+                        $Nombre = $datos['Nombre'];
+                        $Profesor = $datos['Profesor'];
+                        $Curso = $datos['Curso'];
+                        $Aula = $datos['Aula'];
+                        $Fecha = $datos['Fecha'];
+                        $stmt = $conexion->prepare("INSERT INTO Clase NombreAsig,Profesor,Curso,Aula,Fecha_Hora) values (?,?,?,?,?)");
+                        $stmt->bind_param("siiss",$Nombre,$Profesor,$Curso,$Aula,$Fecha);
+
+                        if($stmt->execute()){
+                            echo "Registro insertado con exito";
+                        }else{
+                            echo "Error al insertar el registro" . $conexion.error;
+                        }
             
                     default:
                         echo "Tabla no válida";
