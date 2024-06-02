@@ -73,19 +73,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                     break;
                     case 'Curso':
-                        $Nivel = $datos['nivel'];
-                        $Letra = $datos['letra'];
-                        $NumeroAlumnos = $datos['numeroAlumnos'];
-            
-                        $stmt = $conexion->prepare("INSERT INTO curso(Nivel,Letra,NumeroAlumnos) VALUES (?, ?, ?)");
-                        $stmt->bind_param("isi", $Nivel, $Letra, $NumeroAlumnos);
-            
-                        if ($stmt->execute()) {
-                            echo "Registro insertado con éxito";
-                        } else {
+                        $nivel = $datos['nivel'];
+                        $letra = $datos['letra'];
+                        $NumeroAlumnos = $datos['NumeroAlumnos'];
+
+                        $stmt = $conexion->prepare("INSERT INTO Curso(Nivel,Letra,NumeroAlumnos)values(?,?,?)");
+                        $stmt->bind_param("sss",$nivel,$letra,$NumeroAlumnos);
+
+                        if($stmt->execute()){
+                            echo "Registro insertado con exito";
+                        }else{
                             echo "Error al insertar el registro: " . $conexion->error;
                         }
-                        break;
+                     case 'Nivel':
+                            $Grado = $datos['grado'];
+                            $Categoria = $datos['categoria'];
+                        
+                            $stmt = $conexion->prepare("INSERT INTO nivel(Grado, Categoria) VALUES (?, ?)");
+                            $stmt->bind_param("ss", $Grado, $Categoria);
+                        
+                            if ($stmt->execute()) {
+                                echo "Registro insertado con éxito";
+                            } else {
+                                echo "Error al insertar el registro: " . $conexion->error;
+                            }
+                     break;
+                        
             
                     default:
                         echo "Tabla no válida";

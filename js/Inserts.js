@@ -100,15 +100,15 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
             case 'Curso':
                 // Extracción de datos del formulario
                 var nivel = document.querySelector('select[name="nivel"]').value;
-                var letra = document.querySelector('input[name="letra"]').value;
-                var numeroAlumnos = document.querySelector('input[name="numeroAlumnos"]').value;
+                var letra = document.querySelector('select[name="letra"]').value;
+                var NumeroAlumnos = document.querySelector('input[name="NumeroAlumnos"]').value;
 
                 // Codificación de datos a JSON
                 var datos = {
                     tabla: $Tabla,
                     nivel: nivel,
                     letra: letra,
-                    numeroAlumnos: numeroAlumnos
+                    NumeroAlumnos: NumeroAlumnos
                 };
 
                 var xhr = new XMLHttpRequest();
@@ -119,6 +119,47 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
                 };
                 xhr.send(JSON.stringify(datos));
                 break;
+                case 'Nivel':
+                    // Extracción de datos del formulario
+                    var grado = document.querySelector('select[name="Grado"]').value;
+                    var categoria = document.querySelector('select[name="Categoria"]').value;
+                
+                    // Codificación de datos a JSON
+                    var datos = {
+                        tabla: $Tabla,
+                        grado: grado,
+                        categoria: categoria
+                    };
+                
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '../actionsPhp/INSERT.php', true);
+                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xhr.onload = function() {
+                        alert(this.responseText);
+                    };
+                    xhr.send(JSON.stringify(datos));
+                    break;
+                case 'Curso':
+                    var nivel = document.querySelector('select[name="nivel"]').value;
+                    var letra = document.querySelector('select[name="letra"]').value;
+                    var numeroAlumnos = document.querySelector('input[name="numeroAlumnos"]').value;
+
+                    //codificacion
+                    var datos ={
+                        tabla: $Tabla,
+                        nivel : nivel,
+                        letra : letra,
+                        NumeroAlumnos : numeroAlumnos
+                    };
+
+                    var xhr= new XMLHttpRequest();
+                    xhr.open('POST','../actionsPhp/INSERT.php', true);
+                    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+                    xhr.onload = function(){
+                        alert(this.responseText);
+                    }
+                    xhr.send(JSON.stringify(datos));
+                    break;
             // Caso para cada tabla
 
         default:
