@@ -103,7 +103,7 @@
         const itemsPerPage = 10;
         let currentPage = 1;
 
-        fetchData('../actionsPhp/ldApoderado.php', data => {
+        fetchData('../actionsPhp/load/ldApoderado.php', data => {
             renderTable(data, 0, itemsPerPage);
             renderPagination(data, itemsPerPage);
         });
@@ -111,5 +111,9 @@
     <div class="btnVolver">
         <a href="../HUB.php" class="btn -btnVolver">Volver</a>
     </div>
+    <script src= "../js/update.js"></script>
+    <script src="../js/Inserts.js"></script>
+    <script src="../js/Delete.js"></script>
+    <script src="../js/limpiar.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración | Curso</title>
+    <title>Administración | Clase</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
@@ -98,11 +98,11 @@
                 var tr= document.createElement('tr');
                 tr.innerHTML = `
                 <td>${fila.ID}</td>
-                <td>${fila.Nombre}</td>
+                <td>${fila.NombreAsig}</td>
                 <td>${fila.Profesor}</td>
                 <td>${fila.Curso}</td>
                 <td>${fila.Aula}</td>
-                <td>${fila.Fecha}</td>`;
+                <td>${fila.Fecha_Hora}</td>`;
                 tbody.appendChild(tr);
             });
         }
@@ -158,19 +158,21 @@
 </body>
     <script>
         $(document).ready(function(){
-            $('#tabla-clase tbody').on('click','tr', function(){
-                var rowData = $(this).children('td').map(function(){
-                    return $(this).text();
-                }).get();
+        $('#tabla-clase tbody').on('click','tr', function(){
+            console.log('Fila clickeada'); // Añadir este console.log para verificar
+            var rowData = $(this).children('td').map(function(){
+                return $(this).text();
+            }).get();
 
-                $('#id').val(rowData[0]);
-                $('#Nombre').val(rowData[1]);
-                $('#Profesor').val(rowData[2]);
-                $('#Curso').val(rowData[3]);
-                $('#Aula').val(rowData[4]);
-                $('#Fecha').val(rowData[5]);
-            });
+            $('#id').val(rowData[0]);
+            $('#Nombre').val(rowData[1]);
+            $('#Profesor').val(rowData[2]);
+            $('#Curso').val(rowData[3]);
+            $('#Aula').val(rowData[4]);
+            $('#Fecha').val(rowData[5]);
         });
+    });
+
     </script>
     <!-- <span class="loader"></span> -->
     <script src= "../js/update.js"></script>

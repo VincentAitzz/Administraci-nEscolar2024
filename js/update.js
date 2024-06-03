@@ -1,5 +1,6 @@
 document.getElementById('Editar').addEventListener('click',function(event){
     event.preventDefault();
+    console.log("Botón Editar clickeado");
 
     var $Tabla = document.querySelector('input[id="nombreTabla"]').value;
 
@@ -22,6 +23,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function(){
                 alert(this.responseText);
+                obtenerDatos();
             }
             xhr.send(JSON.stringify(datos));
             
@@ -31,7 +33,6 @@ document.getElementById('Editar').addEventListener('click',function(event){
             var id = document.querySelector('input[name="id"]').value;
             var rut = document.querySelector('input[name="rut"]').value;
             var nombre = document.querySelector('input[name="nombre"]').value;
-            var apellidos = document.querySelector('input[name="apellidos"]').value;
             var cargo = document.querySelector('select[name="cargo"]').value;
             var tipoContrato = document.querySelector('input[name="tipo-contrato"]').checked ? 'Definido' : 'Indefinido';
             var estadoContrato = document.querySelector('input[name="estado-contrato"]').checked ? 'Activo' : 'Inactivo';
@@ -135,9 +136,9 @@ document.getElementById('Editar').addEventListener('click',function(event){
                 xhr.send(JSON.stringify(datos));
                 break;
 
-            case 'clase':
+            case 'Clase':
                 var id = document.querySelector('input[name="id"]').value;
-                var Nombre = document.querySelector('input[name="id"]').value;
+                var Nombre = document.querySelector('select[name="Nombre"]').value;
                 var Profesor = document.querySelector('select[name="Profesor"]').value;
                 var Curso = document.querySelector('select[name="Curso"]').value;
                 var Aula =document.querySelector('input[name="Aula"]').value;

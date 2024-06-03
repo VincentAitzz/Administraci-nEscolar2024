@@ -23,15 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 'Empleado':
             $RUT = $datos['rut'];
             $Nombre = $datos['nombre'];
-            $Apellido = $datos['apellidos'];
             $Cargo = $datos['cargo'];
             $TipoContrato = $datos['tipoContrato'];
             $Estado = $datos['estadoContrato'];
             $Contacto = $datos['contacto'];
 
             //  Si pondras los procedimientos almacenados cambia solo lo que esta dentro de las comillas en la Linea de abajo
-            $stmt = $conexion->prepare("INSERT INTO empleados(RUT,Nombre,Apellidos,Cargo,TipoContrato,Estado,Contacto) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssss", $RUT, $Nombre, $Apellido, $Cargo, $TipoContrato, $Estado, $Contacto);
+            $stmt = $conexion->prepare("INSERT INTO empleados(RUT,Nombre,Cargo,TipoContrato,Estado,Contacto) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssss", $RUT, $Nombre, $Cargo, $TipoContrato, $Estado, $Contacto);
+
 
             if ($stmt->execute()) {
                 echo "Registro insertado con éxito";

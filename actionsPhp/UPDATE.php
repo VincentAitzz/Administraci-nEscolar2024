@@ -25,15 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $ID = $datos['id'];
             $RUT = $datos['rut'];
             $Nombre = $datos['nombre'];
-            $Apellido = $datos['apellidos'];
             $Cargo = $datos['cargo'];
             $TipoContrato = $datos['tipoContrato'];
             $Estado = $datos['estadoContrato'];
             $Contacto = $datos['contacto'];
 
             //  Si pondras los procedimientos almacenados cambia solo lo que esta dentro de las comillas en la Linea de abajo
-            $stmt = $conexion->prepare("UPDATE Empleados SET RUT = ?, Nombre = ?, Apellidos = ?, Cargo = ?, TipoContrato =?, Estado = ?, Contacto = ? WHERE id = ?");
-            $stmt->bind_param("sssssssi", $RUT, $Nombre, $Apellido, $Cargo, $TipoContrato, $Estado, $Contacto,$ID);
+            $stmt = $conexion->prepare("UPDATE Empleados SET RUT = ?, Nombre = ?, Cargo = ?, TipoContrato =?, Estado = ?, Contacto = ? WHERE id = ?");
+            $stmt->bind_param("ssssssi", $RUT, $Nombre, $Cargo, $TipoContrato, $Estado, $Contacto, $ID);
+
 
             if ($stmt->execute()) {
                 echo "Registro actualizado con éxito";

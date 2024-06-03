@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Recorrer los resultados y mostrar los nombres de las asignaturas como opciones de selección
     while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row['ID'] . "'>" . $row['Nombre'] . "</option>";
+        echo "<option value='" . $row['Nombre'] . "'>" . $row['Nombre'] . "</option>";
     }
 } else {
     // Si no hay resultados, mostrar un mensaje indicando que no hay asignaturas disponibles
