@@ -116,12 +116,21 @@
             }
         }
 
-        document.querySelector('.inputBus').addEventListener('input', filtrarDatos);
-        obtenerDatos();
+        const itemsPerPage = 10;
+        let currentPage = 1;
+
+        fetchData('../actionsPhp/ldApoderado.php', data => {
+            renderTable(data, 0, itemsPerPage);
+            renderPagination(data, itemsPerPage);
+        });
     </script>
     <div class="btnVolver">
         <a href="../HUB.php" class="btn -btnVolver">Volver</a>
     </div>
+    <script src= "../js/update.js"></script>
+    <script src="../js/Inserts.js"></script>
+    <script src="../js/Delete.js"></script>
+    <script src="../js/limpiar.js"></script>
 </body>
 <script>
     $(document).ready(function(){

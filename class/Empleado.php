@@ -100,7 +100,7 @@
         var filasPorPagina = 6;
 
         function obtenerDatos() {
-            fetch('../actionsPhp/ldEmpleado.php')
+            fetch('../actionsPhp/load/ldEmpleado.php')
             .then(response => response.json())
             .then(data => {
                 datos = data;
@@ -189,9 +189,8 @@
 </script>
 <!-- <span class="loader"></span> 
 <script src="../js/alertaInsEmpleado.js"></script>-->
-<script src="../js/Inserts.js"></script>
-<!--
-<script src="../js/alertaAltEmpleado.js"></script>
-<script src="../js/alertaDelEmpleado.js"></script>
-<script src="../js/limpiarCampos.js"></script>-->
+    <script src= "../js/update.js"></script>
+    <script src="../js/Inserts.js"></script>
+    <script src="../js/Delete.js"></script>
+    <script src="../js/limpiar.js"></script>
 </html>
