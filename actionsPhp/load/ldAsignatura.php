@@ -1,4 +1,4 @@
-    <?php
+<?php
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -10,7 +10,7 @@
         die("Error al conectar: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM apoderado";
+    $sql = "SELECT * FROM Asignatura";
     $result = $conn->query($sql);
 
     $data = [];
@@ -21,4 +21,4 @@
     $conn->close();
 
     echo json_encode($data);
-    ?>
+?>

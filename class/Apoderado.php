@@ -137,6 +137,10 @@
         </div>
         <button class="btnVolver">Volver</button>
     </div>
+    <script src= "../js/update.js"></script>
+    <script src="../js/Inserts.js"></script>
+    <script src="../js/Delete.js"></script>
+    <script src="../js/limpiar.js"></script>
 </body>
 <script>
     const btn = document.querySelector('.btnVolver');
@@ -158,5 +162,7 @@
     });
 </script>
 <script src="../js/Inserts.js"></script>
-<script src="../js/limpiarCampos.js"></script>
+<script src="../js/Delete.js"></script>
+<script src="../js/update.js"></script>
+<script src="../js/limpiar.js"></script>
 </html>

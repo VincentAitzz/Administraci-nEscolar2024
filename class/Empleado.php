@@ -117,16 +117,16 @@
             var paginaActual = 1;
             var filasPorPagina = 6;
 
-            function obtenerDatos() {
-                fetch('../actionsPhp/ldEmpleado.php')
-                .then(response => response.json())
-                .then(data => {
-                    datos = data;
-                    mostrarPagina(paginaActual);
-                    generarBotones();
-                })
-                .catch(error => console.error('Error:', error));
-            }
+        function obtenerDatos() {
+            fetch('../actionsPhp/load/ldEmpleado.php')
+            .then(response => response.json())
+            .then(data => {
+                datos = data;
+                mostrarPagina(paginaActual);
+                generarBotones();
+            })
+            .catch(error => console.error('Error:', error));
+        }
 
             function mostrarPagina(pagina, datosParaMostrar = datos) {
                 var inicio = (pagina - 1) * filasPorPagina;
@@ -210,7 +210,10 @@
         });
     });
 </script>
-<!-- <span class="loader"></span> -->
-<script src="../js/Inserts.js"></script>
-<script src="../js/limpiarCampos.js"></script>
+<!-- <span class="loader"></span> 
+<script src="../js/alertaInsEmpleado.js"></script>-->
+    <script src= "../js/update.js"></script>
+    <script src="../js/Inserts.js"></script>
+    <script src="../js/Delete.js"></script>
+    <script src="../js/limpiar.js"></script>
 </html>
