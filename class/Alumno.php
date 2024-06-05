@@ -6,14 +6,20 @@
     <title>Administración | Alumnos</title>
     <link rel="stylesheet" href="../css/StyleAlumno.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='../actionsPhp/agregarAlumno.js'></script> <!-- Agrega esta línea -->
+    <script src='../actionsPhp/agregarAlumno.js'></script>
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/Class.css">
+    <link rel="stylesheet" href="../css/checkBox.css">
+    <link rel="stylesheet" href="../css/textFields.css">
+    <link rel="stylesheet" href="../css/comboBox.css">
+    <link rel="stylesheet" href="../css/buttons.css">
 </head>
 <body>
-    <div class="container">
+    <div class="contenedorMaster">
         <h2>Administracion De alumnos</h2>
             <div class="input-field">
-                <!-- Rut-->
-                <input type="text" id="id" class="id" disabled>
+                <input type="text" id="id" class="" disabled>
                 <label for="rutAlumno" class="lblID">ID</label>
                 <br>
                 <input type="text" id="rut" class="rut" required>

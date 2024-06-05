@@ -14,5 +14,6 @@
     --color-button: var(--color-bordes);
     --color-black: var(--color-fondo);
 
-    
+    --color-texto-adv: #4F747B;
+    --color-btn-hover: #C6F6FF;
 }

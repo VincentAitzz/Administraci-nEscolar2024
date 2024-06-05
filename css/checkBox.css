@@ -1,31 +1,125 @@
-.cbContenedor {
-    display: inline-block;
-}
-.cbContenedor .button__checkbox {
+.wrap-check-53 .switch {
     display: none;
-}
-.cbContenedor .button__label {
-    background-color: var(--color-no);
-    width: 5rem;
-    height: 3rem;
-    border-radius: 3rem;
-    display: inline-block;
+  }
+
+  .wrap-check-53 .switch + label {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--color-texto);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 15px;
     position: relative;
-}
-.cbContenedor .button__label:before {
-    transition: .2s;
-    display: block;
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--color-button);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .wrap-check-53 .switch + label::before,
+  .wrap-check-53 .switch + label::after {
     content: '';
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-.cbContenedor .button__checkbox:checked + .button__label {
-    background-color: var(--color-si);
-}
-.cbContenedor .button__checkbox:checked + .button__label:before {
-    transform: translateX(2rem);
+    display: block;
+  }
+
+  .wrap-check-53 .switch + label::before {
+    background-color: var(--color-bordes-deshabilitado);
+    border-radius: 500px;
+    height: 3.5vh;
+    margin-right: 1vh;
+    -webkit-transition: background-color 0.125s ease-out;
+    transition: background-color 0.125s ease-out;
+    width: 6vh;
+  }
+
+  .wrap-check-53 .switch + label::after {
+    background-color: #fff;
+    border-radius: 6vh;
+    box-shadow: 0 3px 1px 0 
+    rgba(37, 34, 71, 0.05), 0 2px 2px 0 
+    rgba(37, 34, 71, 0.1), 0 3px 3px 0 
+    rgba(37, 34, 71, 0.05);
+    height: 3vh;
+    position: absolute;
+    top: .29vh;
+    left: .3vh;
+    -webkit-transition: -webkit-transform 0.125s ease-out;
+    transition: -webkit-transform 0.125s ease-out;
+    transition: transform 0.125s ease-out;
+    transition: transform 0.125s ease-out, -webkit-transform 0.125s ease-out;
+    width: 3vh;
+  }
+
+  .wrap-check-53 .switch + label .switch-x-text {
+    display: block;
+    margin-right: .3em;
+  }
+
+  .wrap-check-53 .switch + label .switch-x-toggletext {
+    display: block;
+    font-weight: bold;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 10vh;
+  }
+
+  .wrap-check-53 .switch + label .switch-x-unchecked,
+  .wrap-check-53 .switch + label .switch-x-checked {
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
+    transition: opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
+    transition: transform 0.125s ease-out, opacity 0.125s ease-out;
+    transition: transform 0.125s ease-out, opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
+  }
+
+  .wrap-check-53 .switch + label .switch-x-unchecked {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  .wrap-check-53 .switch + label .switch-x-checked {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  .wrap-check-53 .switch + label .switch-x-hiddenlabel {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .wrap-check-53 .switch:checked + label::before {
+    background-color: var(--color-bordes);
+  }
+
+  .wrap-check-53 .switch:checked + label::after {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(2.5vh, 0, 0);
+  }
+
+  .wrap-check-53 .switch:checked + label .switch-x-unchecked {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .wrap-check-53 .switch:checked + label .switch-x-checked {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+.contenedorCheck{
+    display:flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    margin-left: 2vh;
 }

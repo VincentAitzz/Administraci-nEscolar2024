@@ -1,3 +1,6 @@
+.contenedorCbox{
+    margin-left: 2%;
+}
 .comboBox {
     border: 2px solid var(--color-bordes-cbox); /* Establece el color de los bordes */
     border-radius: 25px; /* Agrega bordes redondeados */

@@ -1,0 +1,139 @@
+/*    Botones para volver*/
+
+.btnVolver,
+.btnVolver *,
+.btnVolver :after,
+.btnVolver :before,
+.btnVolver:after,
+.btnVolver:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btnVolver {
+  -webkit-tap-highlight-color: transparent;
+  background-image: none;
+  color: var(--color-bordes);
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.5;
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 2%;
+}
+.btnVolver:disabled {
+  cursor: default;
+}
+.btnVolver:-moz-focusring {
+  outline: auto;
+}
+.btnVolver svg {
+  display: block;
+}
+.btnVolver [hidden] {
+  display: none;
+}
+.btnVolver {
+  --margin: 20%;
+  background: none;
+  -webkit-clip-path: polygon(
+    calc(var(--margin) * -1) 0,
+    calc(100% + var(--margin)) 0,
+    calc(100% + var(--margin)) 100%,
+    calc(var(--margin) * -1) 100%
+  );
+  clip-path: polygon(
+    calc(var(--margin) * -1) 0,
+    calc(100% + var(--margin)) 0,
+    calc(100% + var(--margin)) 100%,
+    calc(var(--margin) * -1) 100%
+  );
+  display: inline;
+  font-weight: 900;
+  transition: 0.2s;
+}
+.btnVolver:hover {
+  transform: scale(1.1);
+}
+.btnVolver:before {
+  background: var(--color-bordes-deshabilitado);
+  content: "";
+  height: 2px;
+  left: -100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  width: calc(100% + var(--margin) * 2);
+}
+.btnVolver:hover:before {
+  transform: translate(calc(100% - var(--margin) * 2), -50%);
+}
+
+.contenedorButton{
+  display: flex;
+  margin: 2%;
+}
+
+
+/* Botones del CRUD*/
+.btn,
+.btn *,
+.btn :after,
+.btn :before,
+.btn:after,
+.btn:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--color-bordes);
+  background-image: none;
+  color: var(--color-fondo);
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+.btn:disabled {
+  cursor: default;
+}
+.btn:-moz-focusring {
+  outline: auto;
+}
+.btn svg {
+  display: block;
+}
+.btn [hidden] {
+  display: none;
+}
+.btn {
+  border: 1px solid;
+  border-radius: 50px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  margin: .5vh;
+  padding: 2vh 2vh;
+  text-align: center;
+}
+.btn:hover {
+  -webkit-animation: pulse 0.5s;
+  animation: pulse 0.5s;
+  box-shadow: 0 0 0 2em 
+transparent;
+}
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-texto-adv);
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-texto-adv);
+  }
+}
