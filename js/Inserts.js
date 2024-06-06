@@ -1,25 +1,18 @@
 document.getElementById('Ingresar').addEventListener('click', function(event) {
     event.preventDefault();
-
-    /*
-    
-    Revisa los Formularios de las tablas en caso de cualquier shit
-    
-    */
-
     //Variable de nombre de tabla para el switch
     var $Tabla = document.querySelector('input[id="nombreTabla"]').value;
-
+    alert("NO he entrado")
     switch ($Tabla){
         case 'Empleado':
-
+            alert("Entre a la wea")
         //  Extraccion de datos del formulario
             var rut = document.querySelector('input[name="rut"]').value;
             var nombre = document.querySelector('input[name="nombre"]').value;
             var apellidos = document.querySelector('input[name="apellidos"]').value;
             var cargo = document.querySelector('select[name="cargo"]').value;
-            var tipoContrato = document.querySelector('input[name="tipo-contrato"]').checked ? 'Definido' : 'Indefinido';
-            var estadoContrato = document.querySelector('input[name="estado-contrato"]').checked ? 'Activo' : 'Inactivo';
+            var tipoContrato = document.querySelector('input[id="switch-contrato"]').checked ? 'Definido' : 'Indefinido';
+            var estadoContrato = document.querySelector('input[id="switch-estado"]').checked ? 'Activo' : 'Inactivo';
             var contacto = document.querySelector('input[name="contacto"]').value;
 
             //Codificacion de datos a json
