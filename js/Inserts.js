@@ -2,10 +2,8 @@ document.getElementById('Ingresar').addEventListener('click', function(event) {
     event.preventDefault();
     //Variable de nombre de tabla para el switch
     var $Tabla = document.querySelector('input[id="nombreTabla"]').value;
-    alert("NO he entrado")
     switch ($Tabla){
         case 'Empleado':
-            alert("Entre a la wea")
         //  Extraccion de datos del formulario
             var rut = document.querySelector('input[name="rut"]').value;
             var nombre = document.querySelector('input[name="nombre"]').value;

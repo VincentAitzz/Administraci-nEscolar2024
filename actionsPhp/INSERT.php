@@ -11,13 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $datos = json_decode(file_get_contents('php://input'), true);
-
-    /*
-    
-    Revisa los Formularios de las tablas en caso de cualquier shit
-    
-    */
-
     
     switch ($datos['tabla']) {
         case "Empleado":

@@ -12,13 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $datos = json_decode(file_get_contents('php://input'), true);
 
-    /*
-    
-    Revisa los Formularios de las tablas en caso de cualquier shit
-    
-    */
-
-    
     switch ($datos['tabla']) {
         case 'Empleado':
             // Aquí iría la lógica para actualizar un empleado
@@ -101,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             break;
 
-        case 'nivel':
+        case 'Nivel':
             // Aquí iría la lógica para actualizar un nivel
                     $ID = $datos['id'];
                     $Grado = $datos['Grado'];

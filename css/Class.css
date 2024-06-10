@@ -102,7 +102,7 @@ body{
     .contenedorMaster{
         grid-template-columns: 1fr;;
     }
-    .contenedorData {
+    .contenedorDataHUB {
         grid-row: 2; /* Mueve el segundo contenedor a la segunda fila */
       }
 }

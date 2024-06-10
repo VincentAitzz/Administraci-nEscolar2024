@@ -212,8 +212,8 @@
 </script>
 <!-- <span class="loader"></span> 
 <script src="../js/alertaInsEmpleado.js"></script>-->
-    <script src= "../js/update.js"></script>
+    <script src= "../js/Update.js"></script>
     <script src="../js/Inserts.js"></script>
     <script src="../js/Delete.js"></script>
-    <script src="../js/limpiar.js"></script>
+    <script src="../js/Limpiar.js"></script>
 </html>

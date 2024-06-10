@@ -6,7 +6,7 @@
     border-radius: 25px; /* Agrega bordes redondeados */
     background-color: var(--color-fondo); /* Establece el color de fondo */
     padding: 10px; /* Añade relleno al campo de texto */
-    color: var(--color-bordes); /* Define el color del texto */
+    color: var(--color-bordes-deshabilitado); /* Define el color del texto */
     font-family: var(--fuente-texto);
 }
 /* Estilos adicionales si es necesario */

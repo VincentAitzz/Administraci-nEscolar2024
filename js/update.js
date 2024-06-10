@@ -33,10 +33,12 @@ document.getElementById('Editar').addEventListener('click',function(event){
             var id = document.querySelector('input[name="id"]').value;
             var rut = document.querySelector('input[name="rut"]').value;
             var nombre = document.querySelector('input[name="nombre"]').value;
+            var apellidos = document.querySelector('input[name="apellidos"]').value;
             var cargo = document.querySelector('select[name="cargo"]').value;
-            var tipoContrato = document.querySelector('input[name="tipo-contrato"]').checked ? 'Definido' : 'Indefinido';
-            var estadoContrato = document.querySelector('input[name="estado-contrato"]').checked ? 'Activo' : 'Inactivo';
+            var tipoContrato = document.querySelector('input[id="switch-contrato"]').checked ? 'Definido' : 'Indefinido';
+            var estadoContrato = document.querySelector('input[id="switch-estado"]').checked ? 'Activo' : 'Inactivo';
             var contacto = document.querySelector('input[name="contacto"]').value;
+
 
             //Codificacion de datos a json
             var datos = {
@@ -163,7 +165,7 @@ document.getElementById('Editar').addEventListener('click',function(event){
                 xhr.send(JSON.stringify(datos));
                 break;
 
-            case 'nivel':
+            case 'Nivel':
                 var id = document.querySelector('input[name="id"]').value;
                 var Grado = document.querySelector('select[name="Grado"]').value;
                 var Categoria = document.querySelector('select[name="Categoria"]').value;

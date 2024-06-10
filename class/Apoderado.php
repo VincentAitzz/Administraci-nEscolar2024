@@ -77,7 +77,7 @@
                 var filasPorPagina = 6;
 
                 function obtenerDatos() {
-                    fetch('../actionsPhp/ldApoderado.php')
+                    fetch('../actionsPhp/load/ldApoderado.php')
                     .then(response => response.json())
                     .then(data => {
                         datos = data;
@@ -97,7 +97,13 @@
 
                     filas.forEach(fila => {
                         var tr = document.createElement('tr');
-                        tr.innerHTML = `<td>${fila.ID}</td><td>${fila.RUT}</td><td>${fila.Nombre}</td><td>${fila.Apellidos}</td><td>${fila.Contacto}</td>`;
+                        tr.innerHTML = `
+                        <td>»</td>
+                        <td>${fila.ID}</td>
+                        <td>${fila.RUT}</td>
+                        <td>${fila.Nombre}</td>
+                        <td>${fila.Apellidos}</td>
+                        <td>${fila.Contacto}</td>`;
                         tbody.appendChild(tr);
                     });
                 }
@@ -137,10 +143,6 @@
         </div>
         <button class="btnVolver">Volver</button>
     </div>
-    <script src= "../js/update.js"></script>
-    <script src="../js/Inserts.js"></script>
-    <script src="../js/Delete.js"></script>
-    <script src="../js/limpiar.js"></script>
 </body>
 <script>
     const btn = document.querySelector('.btnVolver');
@@ -163,6 +165,6 @@
 </script>
 <script src="../js/Inserts.js"></script>
 <script src="../js/Delete.js"></script>
-<script src="../js/update.js"></script>
-<script src="../js/limpiar.js"></script>
+<script src="../js/Update.js"></script>
+<script src="../js/Limpiar.js"></script>
 </html>

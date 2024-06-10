@@ -19,7 +19,7 @@ document.getElementById('Limpiar').addEventListener('click', function(event){
         case 'Alumno':
             limpiarCamposAlumnos();
             break;
-        case 'nivel':
+        case 'Nivel':
             limpiarCamposNivel();
             break;
         case 'Asignatura':
@@ -94,13 +94,14 @@ function limpiarCamposCurso() {
 }
 
 function limpiarCamposEmpleado() {
-    // Limpiar campos específicos para la tabla 'Empleado'
+    
     document.querySelector('input[name="id"]').value = '';
     document.querySelector('input[name="rut"]').value = '';
     document.querySelector('input[name="nombre"]').value = '';
+    document.querySelector('input[name="apellidos"]').value = '';
     document.querySelector('select[name="cargo"]').selectedIndex = 0;
-    document.querySelector('input[name="tipo-contrato"]').checked = false;
-    document.querySelector('input[name="estado-contrato"]').checked = false;
+    document.querySelector('input[id="switch-contrato"]').checked = false;
+    document.querySelector('input[id="switch-estado"]').checked = false;
     document.querySelector('input[name="contacto"]').value = '';
     
     // Llamar a la función genérica para limpiar los campos restantes

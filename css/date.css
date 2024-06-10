@@ -1,0 +1,13 @@
+.dateInput{
+    background-color: transparent;
+    filter: invert(1);
+    border: 2px solid #b72b0f;
+    color: #b72b0f;
+    padding: 1vh;
+    border-radius: 25px;
+    width: 96%;
+    height: 3vh;
+}
+.contenedorDate{
+    padding: 2vh;
+}
